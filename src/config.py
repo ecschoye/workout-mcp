@@ -3,23 +3,20 @@
 import os
 from pathlib import Path
 
-# Paths — overridable via env vars
-WORKSPACE_DIR = Path(os.environ.get(
-    "WORKOUT_WORKSPACE_DIR",
-    str(Path.home() / ".zeroclaw/workspace/work"),
-))
-DATA_DIR = Path(os.environ.get(
-    "WORKOUT_DATA_DIR",
-    str(WORKSPACE_DIR / "fitness_data"),
-))
+# Repo root — where this package lives
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+
+# Default data dir is data/ inside the repo
+# Override with WORKOUT_DATA_DIR env var (e.g. Pi uses fitness_data/)
+DATA_DIR = Path(os.environ.get("WORKOUT_DATA_DIR", str(_REPO_ROOT / "data")))
 
 STRAVA_CACHE = DATA_DIR / "strava_cache.json"
 SLEEP_LOG = DATA_DIR / "sleep_log.md"
 SLEEP_RAW_DIR = DATA_DIR / "sleep_raw"
 WORKOUT_NOTES = DATA_DIR / "workout_notes.json"
-PANTRY_FILE = WORKSPACE_DIR / "pantry.json"
-TRAINING_PROGRAM = WORKSPACE_DIR / "training_program.md"
-BACK_HEALTH = WORKSPACE_DIR / "back_health.md"
+PANTRY_FILE = DATA_DIR / "pantry.json"
+TRAINING_PROGRAM = DATA_DIR / "training_program.md"
+BACK_HEALTH = DATA_DIR / "back_health.md"
 
 # User stats
 USER_STATS = {

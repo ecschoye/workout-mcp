@@ -28,6 +28,8 @@ pip install -e ~/workout-mcp
 
 ## Claude Code config (~/.claude.json)
 
+By default, the server reads from `data/` inside the repo. No env vars needed on Mac:
+
 ```json
 {
   "workout-mcp": {
@@ -35,22 +37,25 @@ pip install -e ~/workout-mcp
     "command": "python3",
     "args": ["-m", "src.server"],
     "env": {
-      "PYTHONPATH": "/home/edvard/workout-mcp"
+      "PYTHONPATH": "/path/to/workout-mcp"
     }
   }
 }
 ```
 
+On the Pi (where Strava cache cron writes to a different location), override with:
+
+```json
+"WORKOUT_DATA_DIR": "/home/edvard/.zeroclaw/workspace/work/fitness_data"
+```
+
 ## Data files
 
-Reads from `~/.zeroclaw/workspace/work/`:
-- `fitness_data/strava_cache.json`
-- `fitness_data/sleep_log.md`
-- `training_program.md`
-- `back_health.md`
-- `pantry.json`
+All data files live in `data/` (or wherever `WORKOUT_DATA_DIR` points):
 
-Creates:
-- `fitness_data/workout_notes.json`
-
-Override paths via `WORKOUT_WORKSPACE_DIR` and `WORKOUT_DATA_DIR` env vars.
+- `strava_cache.json` — Strava activities (refreshed by cron on Pi)
+- `sleep_log.md` — Apple Watch sleep
+- `training_program.md` — A/B workout + cardio plan
+- `back_health.md` — Medical history
+- `pantry.json` — Ingredient inventory (also written by `update_pantry`)
+- `workout_notes.json` — Created by `log_workout_notes`

@@ -1,0 +1,51 @@
+{
+  "proteins": [
+    "eggs",
+    "chicken thighs (frozen)",
+    "cottage cheese",
+    "chicken thighs (1.6kg)",
+    "hamburger (400g)",
+    "genoa salami"
+  ],
+  "staples": [
+    "rice",
+    "couscous",
+    "potatoes",
+    "oats",
+    "jasmine rice (980g)",
+    "hamburger buns (8 pack)",
+    "kind granola oats dark chocolate (312g)",
+    "stoked oats superfood granola (300g)"
+  ],
+  "dairy": [
+    "cottage cheese",
+    "activia yoghurt",
+    "milk"
+  ],
+  "vegetables": [
+    "green beans (frozen)",
+    "carrots (frozen)",
+    "broccoli (frozen)"
+  ],
+  "sauces_and_condiments": [
+    "soy sauce",
+    "rice vinegar",
+    "sesame oil",
+    "honey",
+    "ginger",
+    "garlic",
+    "chipotle mayo",
+    "ketchup",
+    "honey mustard",
+    "honey garlic bbq",
+    "hoisin sauce",
+    "oyster sauce"
+  ],
+  "other": [
+    "protein powder",
+    "low sugar musli",
+    "bananas (6)",
+    "pickles",
+    "artisan baguette"
+  ]
+}
