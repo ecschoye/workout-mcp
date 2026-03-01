@@ -1,0 +1,12 @@
+[project]
+name = "workout-mcp"
+version = "0.1.0"
+description = "MCP server for fitness data, training program, nutrition, and workout tracking"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli]>=1.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
